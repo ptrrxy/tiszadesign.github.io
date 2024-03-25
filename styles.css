@@ -2327,24 +2327,23 @@ iframe{
 
     .nav__menu{
         width: 50%;
-        right: -24rem;
     }
     
     .nav__logo{
-        font-size: 3.6rem;
+        font-size: 3.4rem;
     }
 
     .TDLOGOb{
         display: block;
-        width: 67px;
+        width: 64px;
         position: absolute;
-        margin-left:8.4rem;
+        margin-left:7.9rem;
         margin-top: -0.1rem;
     }
 
 
     .nav__menu{
-        right: -50%;
+        right: -36%;
     }
 
     .nav__list{
@@ -2359,19 +2358,19 @@ iframe{
     }
 
     .megbizhato{
-        font-size: 11rem;
-    }
-
-    .effektiv{
-        font-size: 9rem;
-    }
-
-    .odaado{
         font-size: 10rem;
     }
 
+    .effektiv{
+        font-size: 8rem;
+    }
+
+    .odaado{
+        font-size: 9rem;
+    }
+
     .home__description{
-        font-size: 2.1rem;
+        font-size: 1.7rem;
         width: 100%;
     }
 
@@ -2383,11 +2382,11 @@ iframe{
     }
 
     .references h1{
-        font-size: 8rem;
+        font-size: 7rem;
     }
 
     .references__description{
-        font-size: 5.5rem;
+        font-size: 4.5rem;
 
     }
 
@@ -2468,7 +2467,7 @@ iframe{
     }
 
     .uzletunk{
-        height: 170vh;
+        height: 185vh;
         padding-left: 0rem;
     }
     
@@ -2532,7 +2531,7 @@ iframe{
 
 
     .arlista{
-        height: 270vh;
+        height: 290vh;
     }
 
     .arlista__container{
@@ -2642,11 +2641,11 @@ iframe{
     
 
     iframe{
-        height: 29%;
+        height: 23%;
     }
 
     .gyorsgomb{
-        margin-left: 3rem;
+        margin-left: 2.3rem;
         font-size: 0.81rem;
     }
 
