@@ -2327,7 +2327,6 @@ iframe{
 
     .nav__menu{
         width: 50%;
-        right: -28rem;
     }
     
     .nav__logo{
@@ -2344,7 +2343,7 @@ iframe{
 
 
     .nav__menu{
-        right: -40%;
+        right: -30%;
     }
 
     .nav__list{
