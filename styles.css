@@ -2327,6 +2327,7 @@ iframe{
 
     .nav__menu{
         width: 50%;
+        right: -24rem;
     }
     
     .nav__logo{
@@ -2343,7 +2344,7 @@ iframe{
 
 
     .nav__menu{
-        right: -30%;
+        right: -50%;
     }
 
     .nav__list{
@@ -2406,11 +2407,11 @@ iframe{
     }
 
     .footer{
-        height: 22%;
+        height: 24%;
     }
 
     .home__szolgaltatasok{
-        height: 100vh;
+        height: 110vh;
     }
 
     .szolgaltatasok__container,
@@ -2466,5 +2467,191 @@ iframe{
         max-width: 60%;
     }
 
+    .uzletunk{
+        height: 170vh;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2.7rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1.2rem;
+    }
+    
+    
+    .uzletunk__kinalata1{
+        padding: 100px 20px 100px 40px;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        max-width: 100%;
+    }
+    
+
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1.050rem;
+    }
+    
+    .termszinek{
+        width: 330px;
+    }
+    
+    
+    .uzletunk_kepek_rightside, .right__side{
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    
+    .right__side__text{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+    }
+
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 5rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 3rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 1.5rem;
+    }
+
+
+    .arlista{
+        height: 270vh;
+    }
+
+    .arlista__container{
+        position: relative;
+        margin: 0 auto;
+        padding-top: 5rem;
+        text-align: center;
+        gap: 5rem;
+    }
+    
+    .middle{
+        background-color: #293F4F;
+        border-top-left-radius: 300px;
+        border-top-right-radius: 300px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        padding: 50px 50px 50px 50px;
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pdf{
+        font-size: 2rem;
+    }
+    
+    .pdfsmall{
+        font-size: 1.3rem;
+    }
+
+    
+    .middle2, .middle3, .left, .right{
+        background-color: #293F4F;
+        border-radius: 20px;
+        padding: 50px 50px 50px 50px;
+        position: relative;
+    }
+
+
+    
+    .tdlogoarlista, .tdarlistakepek, .tdarlistakepek2{
+        margin: 0 auto;
+        z-index: 3;
+        width: 300px;
+        padding-bottom: 0rem;
+        max-width: auto;
+    }
+    
+    .arlistatiszadesign{
+        color: var(--color-primarytext);
+        padding-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+    
+    #kaindl{
+        width: 200px;
+        padding-top: 1rem;
+    }
+    
+    
+    
+    .szolgaltatas__button, .megrendeles__button, .arkopa__button, .egger__button, .kaindl__button, .falco__button, .kronospan__button{
+    display: inline-block;
+    background-color: #244d72;
+    padding: 15px 40px 15px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    }
+
+   
+
+
+    .nyitvatartas__container{
+        max-width: 100%;
+    }
+
+    .kapcsolat{
+            padding-left: 0rem;
+
+    }
+
+    .kapcsolat__container{
+
+        margin-top: 5rem;
+        max-width: 100%;
+    }
+
+    .nyitvatartas{
+        max-width: 50%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .list{
+        font-size: 2.2rem;
+    }
+
+    .vasarnap{
+        font-size: 3rem;
+    }
+
+    .nyitvatartas{
+        font-size: 3rem;
+    }
+    
+
+    iframe{
+        height: 29%;
+    }
+
+    .gyorsgomb{
+        margin-left: 3rem;
+        font-size: 0.81rem;
+    }
+
+    .contact__list{
+        width: 113px;
+    }
 
 }
