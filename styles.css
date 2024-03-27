@@ -1,0 +1,4140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --header-height: 3.5rem;
+/*------------- Colors --------------*/
+    --colorbg-primary: linear-gradient(117.64deg, #0D1C2B 0%, #293F4F 69.86%, #39505E 89.01%);
+    --color-primarytext: #D6D6D6;
+    --color-text: #fff;
+    --color-logo: #BFBFBF ;
+    --color-logo2: #342225;
+    --color-button: #6A747A;
+
+    /* Rectangle 3 */
+
+
+
+
+    /*-------------- Fonts etc ---------*/
+    --body-font: "Montserrat", sans-serif;
+    --biggest-font: 5rem;
+    --normal-font: 1.5rem;
+    --small-font: 1rem;
+
+    /*---------------- Font weight ---------*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold:700;
+
+    /*-------------- z index -------------*/
+    --z-tooltip:10;
+    --z-fixed:100;
+}
+    /*-------------- responsive typo -------------*/
+    @media screen and (min-width:1152px){
+        :root {
+            --biggest-font: 4rem;
+            --h3-font-size: 1.1rem;
+            --normal-font: 1.2rem;
+            --small-font: 0.9rem;
+}
+}
+
+/* ------------------ base --------------*/
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font);
+    font-weight: var(--font-medium);
+    color: var(--color-text); 
+background: var(--colorbg-primary);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* --------------- reusable ---------*/
+.container{
+    max-width: 1120px;
+    margin-inline-start: 1.5rem;
+}
+
+.main{
+    overflow: hidden;  /* ------ anim ------ */
+
+}
+
+/* ----------------- header & nav ------------ */
+.header{
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+}
+
+.nav{
+    margin-top: 1rem;
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.nav__logo{
+    padding-left: 0rem;
+    font-size: 1.5rem;
+    color: var(--color-primarytext);
+    letter-spacing: -1px;
+    column-gap: .5rem;
+    font-weight:750;
+    z-index: 2;
+}
+
+.TDLOGOs{
+    width: 81px;
+    position: absolute;
+    padding-left: 3.3rem;
+}
+
+.nav__logo i{
+    font-size: 1.25rem;
+    font-weight: initial;
+}
+
+.nav__toggle{
+    margin-right: 1.5rem;
+}
+
+.nav__toggle,
+.nav__close{
+    background-color: #436878;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+
+/* nav for mobile */
+@media screen and (max-width: 1023px){
+
+
+    .nav__menu{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        background: #284055;
+        width: 80%;
+        height: 100%;
+        box-shadow: 0 0 16px hsla(268, 58%, 4%, .2);
+        padding: 9rem 2rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+        transition: right .4s;
+        z-index: 5;
+    }
+}
+
+.nav__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+
+.nav__link{
+    color: var(--color-text);
+    font-weight:var(--font-semi-bold);
+    transition: color .4s;
+}
+
+.nav__link:hover{
+    color: var(--color-primarytext);
+}
+
+.dropdown__menu{
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.nav__menu ul li:hover .dropdown__menu{
+    display: block;
+    position: absolute;
+    left: 325;
+    top: 100%;
+    background-color: #0D1C2B;
+    border-radius: 20px;
+}
+
+.dropdown__menu ul{
+    display: block;
+    margin: 10px;
+}
+
+.dropdown__menu ul li{
+    width: 200px;
+    padding: 10px 30px;
+}
+
+.dropdown__menu ul li a{
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.dropdown__menu ul li a:hover{
+    color: var(--color-primarytext);
+}
+
+.nav__close{
+    position: absolute;
+    margin-top: 1.2rem;
+    top: .75rem;
+    right: 1.5rem;
+}
+
+/* show menu */
+.show-menu{
+    right: 0;
+}
+/* ANIM */
+.hidden{
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ref1{
+    transition-delay: 200ms;
+}
+
+.ref2{
+    transition-delay: 400ms;
+}
+
+.ref3{
+    transition-delay: 600ms;
+}
+
+.ref4{
+    transition-delay: 800ms;
+}
+
+
+
+
+
+/* ------------------ home ------------- */
+.home{
+        position: relative;
+    height: 115vh;
+}
+
+.home__container{
+    padding-top: 3rem;
+    display: grid;
+    row-gap: 2rem;
+    color: var(--color-primarytext);
+    letter-spacing: 1px;
+    
+}
+
+.home__content{
+    text-align: left;
+}
+
+.megbizhato{
+
+    font-size: 3.1rem;
+    font-weight: 650;
+}
+
+.effektiv{
+    font-size: 1.9rem;
+    margin-left: 7rem;
+    margin-top: -2.5rem;
+    font-weight: 650;
+}
+
+.odaado{
+    margin-top: -3rem;
+    font-size: 2.8rem;
+        font-weight: 650;
+}
+
+.home__description{
+    width: 90%;
+    font-size: 20px;
+    color: #fff;
+    opacity: 50%;
+    margin-top: 0.5rem;
+}
+
+.home__button,
+ .ref__button,
+  .contact__button,
+   .hiba__button, 
+   .submit__button{
+    width: 13rem;
+    display: inline-block;
+background:var(--color-button);
+padding: 1.125rem 3rem;
+border-radius: 4rem;
+text-align: center;
+color: var(--color-primarytext);
+opacity: 60%;
+font-size: 16px;
+font-weight: 550;
+z-index: 3;
+}
+
+
+.home__images{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: initial;
+    width: 65vh;
+}
+
+.TDLOGOb{
+    display: none;
+}
+
+.references{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-height: 90vh;
+    max-height: 100vh;
+    padding-top: 3rem;
+    min-width: 95%;
+    z-index: 5;
+    margin: 0 auto;
+
+}
+
+.bigtext{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.part1{
+    color: var(--color-primarytext);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.part2{
+
+    color: var(--color-primarytext);
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.references__description{
+    font-size: 15px;
+    color: #fff;
+    opacity: 50%;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.refbutton{
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.ref__button{
+    margin-top: 2rem;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.reference__pictures{
+    
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 40vh;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50vh;
+}
+
+.ref1, .ref2, .ref3, .ref4{
+    width: 300px;
+    border-radius: 20px;
+    
+}
+
+
+.contact{
+    background-color: #7590ac;
+    background-image: url(pics/kapcsbg.jpg);
+     object-fit: cover;
+   background-size: cover; 
+   background-position: center; 
+   background-repeat: no-repeat;
+   background-blend-mode: multiply;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: auto;
+    height: 40vh;
+    max-height: 40vh;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
+}
+.bigcontact{
+align-items: center;
+justify-content: center;
+text-align: center;
+margin: 0 auto;
+margin-right: 1rem;
+margin-left: 1rem;
+}
+
+.bigtext1{
+    font-size: 1.2rem;
+}
+
+.smalltext1{
+    margin-top: 1rem;
+    font-size: .8rem
+}
+
+.contact__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.footer{
+background: linear-gradient(36.95deg, #090B0A 54.81%, #0C1922 54.84%, #081A26 90.44%);
+height: auto;
+min-height: 180px;
+}
+
+.footer__container{
+    position: relative;
+    display: flex;
+}
+
+.TDtext{
+    margin-top: 1rem;
+    color: var(--color-logo);
+    position: absolute;
+    font-size: 1.8rem;
+    z-index: 10;
+}
+
+.smalltextlogo{
+    width: 70%;
+    margin-top: 4rem;
+    color: var(--color-text);
+    opacity: 50%;
+    font-size: 13px;
+    z-index: 8;
+}
+
+.footer__information{
+    margin-top: -2rem;
+    position: relative;
+    padding-block: 1rem 2rem;
+    row-gap: 1;
+    display: grid;
+}
+
+.things{
+    padding-left: 0.8rem;
+position: relative;
+    display:flex;
+    align-items:center;
+    font-size: .6rem;
+    color: var(--color-primarytext);
+}
+
+.footer i{
+    padding-left: .5rem;
+    color:#444649;
+    font-size: 1rem;
+}
+
+a{
+    color: var(--color-primarytext);
+}
+
+.services{
+    padding-left: 2rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    display: none;
+}
+
+
+
+b{
+    color: #738da3;
+}
+
+span{
+    color: #86995a;
+}
+
+.adat, .cookie{
+    font-size: .8rem;
+    color: var(--color-primarytext);
+}
+
+
+/* -------------- SZOLGÁLTATÁSOK --------------- */
+
+.home__szolgaltatasok{
+    height: 110vh;
+}
+
+.szolgaltatasok__container, .szolgaltatasok__container2{
+    position: relative;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-primarytext);
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.szabas, .szabas2, .kesziteni{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.home__szolgaltatasok__description, 
+.home__szolgaltatasok__description2{
+    text-align: center;
+    opacity: 70%;
+    font-size: 1rem;
+}
+
+.Panhans{
+    width: 400px;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+ border-radius: 10px;
+ box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.356);
+}
+
+.menete{
+    position: relative;
+    padding-top: 1rem;
+    display: grid;
+    row-gap: 2rem;
+    color: var(--color-primarytext);
+    height: 100vh;
+    margin-top: 2rem;
+    background-color: #5a707c;
+    background-image: url(pics/igenyekbg.jpg);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: top;
+    background-size: cover;
+    background-blend-mode:multiply;
+    border-radius: 0px;
+
+}
+
+.menet__text__container{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000b4;
+    border-radius: 20px;
+    height: 130px;
+    margin-right: 1.5rem;
+
+
+}
+
+.kesziteni{
+    text-align: center;
+    font-size: 1rem;
+    
+}
+
+.home__szolgaltatasok__description3{
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 70%;
+    margin-top: -3rem;
+}
+
+.menete2{
+    margin-left: 2.5rem;
+    padding-left: 0rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    row-gap: 4rem;
+    margin-top: -5rem;
+    background-color: #000000a6;
+    width: 80%;
+    height: 400px;
+    border-radius: 50px;
+    padding: 45px 20px;
+}
+
+
+
+.igenyek, 
+.lapszabas, 
+.elzaras, 
+.osszeszereles{
+    font-size: 1.2rem;
+}
+
+.menete2 i{
+    font-size: 1rem;
+    background-color: #2d5c9281;
+    border-radius: 50%;
+    padding: 0.7rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+
+
+.referenciakpt2__container{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 1.2rem;
+    opacity: 80%;
+    margin-top: -2rem;
+    margin-bottom: 5rem;
+    padding: 20px 0px 20px 0px;
+    background-color: #081A26;
+    margin-right: 1.5rem;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+
+}
+
+.refkepek__container{
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 3rem;
+    margin: 0 auto;
+    background-color:#081a269c;
+    padding: 45px 55px 45px 55px;
+
+    border-top-right-radius: 100px;
+    border-top-left-radius: 10px;
+    
+}
+
+.refkep{
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* ----------- SZOLGÁLTATÁSOK END ---------- */ 
+
+
+
+/* --------------- ÜZLETÜNK ---------------- */
+
+.uzletunk{
+    height: auto;
+            margin-bottom: 3rem;
+    position: relative;
+
+}
+
+.uzletunk__container{
+    background: #7999b1;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-left: 0rem;
+    background-image: url(pics/uzlet.jpeg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    background-blend-mode: multiply;    
+    min-height: 10%;
+    color: var(--color-primarytext);
+}
+
+.uzletunk__text{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 1.5rem;
+}
+
+.kinalat{
+    font-size: 1.3rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primarytext);
+    font-weight: 700;
+}
+
+.kinalattext{
+    padding-top: 0.6rem;
+    font-size: 0.6rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primarytext);
+}
+
+.uzletunk__kinalata1{
+    margin: 1rem 1rem 1rem 1rem;
+    background-color: #081a2673;
+    padding: 50px 30px 50px 15px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 600px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mindent, .kivalasztottal{
+    font-size: 2.1rem;
+    color: var(--color-primarytext);
+    width: 80%;
+}
+
+.szukseged{
+    font-size: 1.3rem;
+    color: var(--color-primarytext);
+    opacity: 80%;
+}
+
+.kepernyo{
+    font-size: 1.3rem;
+    color: var(--color-primarytext);
+    opacity: 80%;
+    width: 90%;
+}
+
+.uzletunk__kinalata1 p{
+    font-size: 1rem;
+    color: var(--color-primarytext);
+    opacity: 70%;
+    display: inline;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.left__side,
+.uzletunk_kepek_leftside,
+.left__side__text,
+.right__side, 
+.uzletunk_kepek_rightside{
+    display: grid;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.termszinek{
+    width: 180px;
+    border-radius: 10px;
+}
+
+.uzletunk_kepek_leftside, .uzletunk_kepek_rightside{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+
+/* ------------ ÜZLETÜNK VÉGE ----------- */
+
+/* ------------- 404 PAGE -------- */
+
+.hiba__page{
+    height:90vh;
+    padding-top: 2rem;
+}
+
+.hiba__container{
+    font-size: 2rem;
+    color: var(--color-primarytext);
+    margin-top: 5rem;
+    padding-top: 0rem;
+}
+
+.sajnaljuk{
+    padding-top: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hibakep{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+/* ------------- 404 PAGE END -------- */
+
+
+/* ------------- ARLISTA -------- */
+
+.arlista{
+    height: auto;
+            margin-bottom: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.arlista__container{
+    position: relative;
+    margin: 0 auto;
+    padding-top: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.middle{
+    background-color: #293F4F;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 50px 50px 50px 50px;
+}
+
+.pdf{
+    font-size: 1.3rem;
+    color: var(--color-primarytext);
+}
+
+.pdfsmall{
+    margin-top: 1rem;
+    font-size: .9rem;
+    opacity: 60%;
+}
+
+.middle2, .middle3, .left, .right{
+    background-color: #293F4F;
+    border-radius: 20px;
+    padding: 50px 50px 50px 50px;
+    position: relative;
+}
+
+
+.tdlogoarlista, .tdarlistakepek, .tdarlistakepek2{
+    margin: 0 auto;
+    z-index: 3;
+    width: 300px;
+    padding-bottom: 0rem;
+    max-width: auto;
+}
+
+.arlistatiszadesign{
+    color: var(--color-primarytext);
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+#kaindl{
+    width: 200px;
+    padding-top: 1rem;
+}
+
+
+
+.szolgaltatas__button,
+ .megrendeles__button,
+  .arkopa__button,
+   .egger__button,
+    .kaindl__button,
+     .falco__button,
+      .kronospan__button,
+       .venni__button{
+display: inline-block;
+background-color: #244d72;
+padding: 15px 40px 15px 40px;
+border-radius: 50px;
+font-size: 1rem;
+margin-top: 1rem;
+}
+
+/* ------------------- ÜZLETÜNK VÉGE ------------- */
+
+/* ------------------- CONTACT ------------- */
+
+.kapcsolat{
+    height: 235vh;
+}
+
+.kapcsolat__container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    gap: 2rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+}
+
+.contact__list{
+    margin: 0 auto;
+    background-color: #00000033;
+    border-radius: 10px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+}
+
+.contact__list__item{
+    background: #20445c;
+    padding: 1.1rem;
+    display: block;
+    text-align: center;
+    color: var(--color-text);
+    font-size: 2rem;
+    border-radius: 50px;
+    transition: all 0.5s ease;
+    margin: 0 auto;
+}
+
+.contact__list__item:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.contact__form{
+    position: relative;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-right: 3rem;
+
+}
+
+.contact__form input, .contact__form textarea{
+    font-family: "Montserrat", sans-serif;
+    background-color: #081A26;
+    border-radius: 10px;
+    padding: 1rem;
+    color: var(--color-primarytext);
+    resize: none;
+}
+
+.submit__button{
+    cursor: pointer;
+}
+
+
+
+.contact__form.error input{
+    border-color: red;
+    border: 1px solid;
+}
+
+.contact__form .error{
+    color: rgb(167, 18, 18);
+    font-size: 14px;
+    height: 10px;
+}
+
+input, textarea{
+	padding: 10px;
+	width:  100%;
+	font-size: 16px;
+	outline: none;
+	margin-bottom: 30px;
+}
+input:focus{
+	border-color: orange;
+}
+.error{
+	color: #af4242;
+	/*visibility: hidden;*/
+	display: none;
+}
+.error.display-error{
+	display:  block;
+	transform: translateY(-20px);
+}
+input[type=submit]:active{
+	background-color: #6c9bc3;
+	color: #fff;
+}
+
+.nyitvatartas__container{
+    position: relative;
+    background-color: #00000044;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    padding: 2rem 2rem 2rem 2rem;
+    width: 100%;
+    max-width: 100vh;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: block;
+    gap: 1.5rem;
+    background-image: url(refpics/nyitvatartasbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nyitvatartas{
+    font-size: 2rem;
+    color: var(--color-primarytext);
+    background-color: #264466;
+    text-align: center;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 200px;
+    margin-bottom: 2rem;
+}
+
+.nyitvatartas__lista{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-primarytext);
+    opacity: 80%;
+}
+
+.nyitvatartas__lista{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.vasarnap{
+    color: var(--color-primarytext);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+iframe{
+
+        position: relative;
+        width: 100%;
+    width: 100%;
+    height: 385px;
+    filter: invert(100%);
+    margin-top: 2rem;
+    border-radius: 20px;
+    margin-bottom: 5rem;
+}
+
+.zarva{
+    color:#395ed6;
+}
+
+.gyorsgomb{
+    background-color: #172f47; 
+    padding: 9px 9px 9px 9px;
+
+    display: flex;
+    border-radius: 5px;
+
+    position: absolute;
+    color: var(--color-primarytext);
+
+    font-size: 0.7rem;
+}
+
+
+/* ------------------- break points ------------- */
+/* small devices */
+@media screen and (max-width:300px){
+
+    .megbizhato, .effektiv, .odaado{
+        font-size: 1.5rem;
+        
+    }
+
+    .TDLOGOb{
+        display: none;
+    }
+
+    .container{
+        margin-inline: 1rem;
+    }
+
+    .home__description{
+        font-size: 1rem;
+    }
+
+    .references{
+        text-align: center;
+        font-size: .8rem;
+    }
+    .references h1{
+        font-size: 1.4rem;
+    }
+
+    .references p{
+        font-size: 1rem;
+    }
+
+    .ref__button{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 2rem;
+    }
+
+    .bigtext1{
+        font-size: 1rem;
+    }
+
+    .smalltext1{
+        font-size: .6rem;
+    }
+
+
+
+    .kesziteni{
+        text-align: center;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .home__szolgaltatasok__description3{
+        text-align: center;
+        font-size: 1rem;
+        opacity: 70%;
+        margin-top: 1.5rem;
+    }
+
+    .sajnaljuk{
+        font-size: 1rem;
+    }
+
+
+    .kapcsolat{
+        height: 200vh;
+    }
+}
+/* taller devices */
+@media screen and (min-width:376px) and (min-height:800px) {
+    .home__container{
+        padding-top: 4rem;
+    }
+
+    .references{
+        display: flex;
+        text-align: center;
+    }
+    .references h1{
+        font-size: 1.8rem;
+    }
+
+    .references p{
+        font-size: 1.1rem;
+    }
+
+    .ref__button{
+    margin-top: 5rem;
+    margin-left: 0rem;
+    }
+
+    .bigtext1{
+        font-size: 1.5rem;
+    }
+
+    .smalltext1{
+        font-size: .9rem;
+    }
+
+
+
+    .smalltextlogo{
+        width: 60%;
+        margin-top: 4rem;
+        color: var(--color-text);
+        opacity: 50%;
+        font-size: 13px;
+    }
+
+    .menete2{
+        margin-top: -10rem;
+    }
+
+    .arlista{
+        height: auto;
+            margin-bottom: 3rem;
+
+    }
+    
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+}
+    
+    
+
+    .kapcsolat{
+        height: 180vh;
+    }
+
+    .arlista{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    iframe{
+        width: 100%;
+        height: 32vh;
+        margin-bottom:10rem;
+    }
+
+    .nyitvatartas__lista{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    .vasarnap{
+        color: var(--color-primarytext);
+        margin-top: 3.2rem;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+    }
+
+    .kapcsolat{
+        height: 190vh;
+    }
+}
+
+@media screen and (min-width:412px) and (min-height:820px){
+
+    .home__szolgaltatasok{
+        height: 90vh;
+    }
+
+    .kapcsolat{
+        height: 180vh;
+    }
+
+    .refbutton{
+        margin-top: -3rem;
+    }
+    iframe{
+        width: 100%;
+        height: 27vh;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .kapcsolat{
+        height: 175vh;
+    }
+
+
+}
+
+/* ------- medium devices -------- */
+@media screen and (min-width: 576px) and (min-height:800px){
+
+
+    .nav__menu{
+        width: 50%;
+    }
+
+    .megbizhato{
+        font-size: 5.2rem;
+    }
+    
+    .effektiv{
+        font-size: 3.5rem;
+        margin-left: 9rem;
+        margin-top: -2.5rem;
+    }
+    
+    .odaado{
+        margin-top: -3rem;
+        font-size: 4.5rem;
+
+    }
+
+    .nav__logo{
+        font-size: 1.9rem;
+        color: var(--color-primarytext);
+        letter-spacing: -1px;
+        column-gap: .5rem;
+        font-weight:750;
+        z-index: 2;
+    }
+    
+    .TDLOGOs{
+        width: 90px;
+        position: absolute;
+        margin-left: 0.9rem;
+    }
+
+    .home{
+        height: 113vh;
+    }
+
+    .home__images{
+        width: 70vh;
+    }
+
+
+    .references h1{
+        font-size: 2.8rem;
+    }
+
+    .references p{
+        font-size: 1.2rem;
+    }
+
+    .reference__pictures{
+        padding-top: 2rem;
+            margin: 0 auto;
+    }
+
+    .ref1, .ref2, .ref3, .ref4{
+        width: 350px;
+    }
+
+    .ref__button{
+    margin-top: 5rem;
+    }
+
+    .bigtext{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .bigtext1{
+        font-size: 2.1rem;
+    }
+
+    .smalltext1{
+        font-size: 1.3rem;
+    }
+
+    
+    .TDtext{
+        margin-top: 1rem;
+        font-size: 2.5rem;
+    }
+    
+    .smalltextlogo{
+        width: 70%;
+        margin-top: 4.5rem;
+        font-size: 16px;
+    }
+    
+    .things{
+    position: relative;
+        display:flex;
+        align-items:center;
+        font-size: 1rem;
+        color: var(--color-primarytext);
+    }
+    
+    
+    .footer i{
+        font-size: 1.5rem;
+    }
+    
+
+    
+    .szabas, .szabas2, .kesziteni{
+        font-size: 2.8rem;
+    }
+    
+    .home__szolgaltatasok__description, 
+    .home__szolgaltatasok__description2,
+    .home__szolgaltatasok__description3{
+        font-size: 1.2rem;
+    }
+    
+    .Panhans{
+        width: 350px;
+    }
+    
+    
+    .menete{
+        margin-top: -5rem;
+    }
+    
+    .kesziteni{
+        font-size: 1.4rem;
+    }
+    
+    .home__szolgaltatasok__description3{
+        font-size: 1rem;
+        margin-top: -2rem;
+    }
+
+    .menete2{
+        margin-left: 3.5rem;
+        padding-left: 0rem;
+        row-gap: 4rem;
+        margin-top: -2rem;
+        width: 80%;
+        height: 400px;
+        border-radius: 50px;
+        padding: 45px 20px;
+    }
+    
+    .igenyek, 
+    .lapszabas, 
+    .elzaras, 
+    .osszeszereles{
+        font-size: 1.3rem;
+    }
+    
+    .menete2 i{
+        font-size: 1.3rem;
+    }
+
+    .referenciakpt2__container{
+        font-size: 1.3rem;
+        opacity: 80%;
+        margin-top: -2rem;
+        margin-bottom: 5rem;
+        padding: 20px 0px 20px 0px;
+        background-color: #081A26;
+        margin-right: 1.5rem;
+    
+    }
+    
+    .refkepek__container{
+        width: 400px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 3rem;
+        margin: 0 auto;
+        background-color:#081a269c;
+        padding: 45px 55px 45px 55px;
+    
+        border-top-right-radius: 100px;
+        border-top-left-radius: 10px;
+        
+    }
+    
+    .refkep{
+        border-radius: 20px;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        position: relative;
+    }
+
+    .uzletunk__kinalata1{
+        margin: 1rem 1rem 1rem 1rem;
+        padding: 80px 60px 60px 40px;
+    }
+    
+
+    .hiba__page{
+        height:90vh;
+        padding-top: 2rem;
+    }
+    
+    .hiba__container{
+        margin: 0 auto;
+        font-size: 2rem;
+        color: var(--color-primarytext);
+        margin-top: 5rem;
+        padding-top: 0rem;
+    }
+    
+    .sajnaljuk{
+        padding-top: 2rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .arlista{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .home__szolgaltatasok{
+        height: 105vh;
+    }
+
+    .kapcsolat{
+        height: 160vh;
+    }
+
+ .kinalat{
+    font-size: 1.7rem;
+ }
+
+ .kinalattext{
+    font-size: 0.8rem;
+ }
+
+ .megbizhato{
+    font-size: 5.2rem;
+ }
+
+ .effektiv{
+    font-size: 4rem;
+ }
+
+ .odaado{
+    font-size: 5.2rem;
+ }
+
+.home__button,
+.ref__button,
+.contact__button{
+padding: 1.4rem 2rem;
+font-size: 1.1rem;
+}
+
+.nyitvatartas__lista{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.vasarnap{
+    color: var(--color-primarytext);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+
+
+iframe{
+    width: 100%;
+    position: relative;
+    height: 30vh;
+    margin-top: 1rem;
+}
+
+.uzletunk{
+    height: auto;
+            margin-bottom: 3rem;
+}
+
+.kapcsolat{
+    height: 170vh;
+}
+}
+
+@media screen and (min-width: 750px)
+{
+
+    .menet__text__container{
+        margin: 0 auto;
+    }
+
+    .list{
+        font-size: 1.3rem;
+    }
+
+    .kesziteni{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+
+
+    .menete2{
+        margin: 0 auto;
+        max-width: 50%;
+    }
+
+    .refkepek__container{
+        width: 80%;
+    }
+
+    .footer{
+        height: 20%;
+        max-height: 25%;
+    }
+
+    .nyitvatartas__lista{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+
+    .vasarnap{
+        color: var(--color-primarytext);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+    }
+
+
+
+    .part1{
+        font-size: 4rem;
+    }
+
+    .part2{
+        font-size: 3rem;
+    }
+
+    .references__description{
+        font-size: 1.5rem;
+    }
+
+    .refbutton{
+        margin-top: -1rem;
+    }
+
+
+    .bigtext{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .uzletunk__kinalata1{
+        margin: 1rem 1rem 1rem 1rem;
+        padding: 100px 80px 80px 60px;
+    }
+
+    .arlista{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .home__szolgaltatasok{
+        height: 120vh;
+    }
+
+    .kapcsolat{
+        height: 170vh;
+    }
+
+    .references{
+        display: flex;
+        text-align: center;
+    }
+
+    .reference__pictures{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .references h1{
+        font-size: 4rem;
+    }
+
+    .references p{
+        font-size: 1.2rem;
+    }
+
+    .reference__pictures{
+        margin-top: -3rem;
+    }
+
+    .ref1, .ref2, .ref3, .ref4{
+        width: 150px;
+    }
+
+    .Panhans{
+        width: 500px;
+    }
+
+    .arlista{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    iframe{
+        width: 100%;
+        position: relative;
+        height: 40vh;
+        margin-top: 1rem;
+    }
+
+    .reference__pictures{
+        margin-top: -9rem;
+    }
+
+    .refbutton{
+        margin-top: -11rem;
+    }
+
+    .home__szolgaltatasok{
+        height: 95vh;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .kapcsolat{
+        height: 175vh;
+    }
+
+    
+
+
+}
+
+
+
+/* large devices */
+
+@media screen and (min-width: 1024px){
+
+    .home, .nav{
+        padding-left: 3rem;
+    }
+
+    .TDLOGOs{
+        display: none;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 35px;
+        position: absolute;
+        margin-left: 4.3rem;
+    }
+
+    
+    .megbizhato{
+        font-size: 6rem;
+    }
+    
+    .effektiv{
+        font-size: 3.5rem;
+        margin-left: 17rem;
+        margin-top: -2.5rem;
+    }
+    
+    .odaado{
+        margin-top: -3rem;
+        font-size: 5rem;
+    }
+
+    .home__description{
+        font-size: 1.5rem;
+        width: 70%;
+    }
+
+    .nav__menu{
+        position: absolute;
+        top: 21;
+        right: 2%;
+        display: flex;
+        flex-direction: column;
+        transition: right .4s;
+        z-index: 5;
+        width: 100%;
+    }
+
+
+    .nav{
+        height: calc(var(--header-height) + 1rem);
+    }
+
+    .nav__toggle,
+    .nav__close{
+        display: none;
+    }
+
+
+
+    .nav__list{
+        margin-left: auto;
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    .home{
+        height: 100vh;
+    }
+
+    .home__images{
+        width: 70vh;
+    }
+
+    .nav__link{
+        font-size: 1rem;
+    }
+
+    .references{
+        display: flex;
+        text-align: center;
+        max-width: 70%;
+    }
+
+    .reference__pictures{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .references h1{
+        font-size: 4rem;
+    }
+
+    .references p{
+        font-size: 1.2rem;
+    }
+
+    .reference__pictures{
+        margin-top: -3rem;
+    }
+
+    .ref1, .ref2, .ref3, .ref4{
+        width: 220px;
+    }
+
+    .ref__button{
+        margin: 0 auto;
+    }
+
+    .smalltextlogo{
+        width: 30%;
+        margin-top: 4.2rem;
+        color: var(--color-text);
+        opacity: 50%;
+        font-size: 15px;
+    }
+
+
+    .smalltext1{
+        width: 100%;
+    }
+    
+
+    .footer__information{
+        position: relative;
+    }
+
+    .things{
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        column-gap: 1rem;
+        row-gap: 1rem;
+        margin-top: -7.6rem;
+        align-items: center;
+        z-index: 6;
+    }
+
+    .thingsinside, .thingsinside2{
+        margin-right: 5rem;
+
+    }
+
+
+    .services{
+        position: relative;
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        align-items: flex-end;
+        justify-content: flex-end;
+        row-gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: -4rem;
+        padding-right: 5rem;
+    }
+
+    .cookie{
+        margin-top: 2rem;
+    }
+
+
+    
+    .szolgaltatasok__container,
+    .szolgaltatasok__container2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: 5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+    .szabas, .szabas2{
+        margin-top: -8rem;
+    }
+
+    .home__szolgaltatasok__description, 
+    .home__szolgaltatasok__description2{
+        margin-top: -12rem;
+    }
+
+    
+    .Panhans {
+        max-width: 100%; /* Ensures images don't overflow container */
+        height: auto; /* Maintains aspect ratio */
+        margin: 0 auto;
+    }
+
+    .kesziteni{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .menete{
+        margin-top: -10rem;
+    }
+    
+
+ 
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2.3rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1rem;
+    }
+
+    .uzletunk__container{
+        margin-top: 3rem;
+        margin-left: 0rem;
+        height: 20vh;
+        width: auto;
+        position: relative;
+        display: grid;
+    }
+    
+    .uzletunk__kinalata1{
+        margin: 2rem 1rem 1rem 1rem;
+        padding: 60px 10px 40px 60px;
+        border-top-left-radius: 200px;
+        border-top-right-radius: 600px;
+        border-bottom-left-radius: 500px;
+        border-bottom-right-radius: 250px;
+    }
+    
+    .mindent, .kivalasztottal{
+        font-size: 2.5rem;
+        color: var(--color-primarytext);
+    }
+    
+    .szukseged, .kepernyo{
+        font-size: 1.4rem;
+
+    }
+    
+    .uzletunk__kinalata1 p{
+        font-size: 0.95rem;
+    }
+    
+    .left__side,
+    .uzletunk_kepek_leftside,
+    .left__side__text,
+    .right__side, 
+    .uzletunk_kepek_rightside{
+        display: grid;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .right__side{
+        margin-right: auto;
+    }
+
+
+    
+    .termszinek{
+        width: 160px;
+    }
+    
+    .uzletunk_kepek_leftside, .uzletunk_kepek_rightside{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .uzletunk_kepek_rightside, .right__side{
+        padding-right: 4rem;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .right__side__text{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-right: 7rem;
+    
+     
+     
+    }
+    .arlista{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .kapcsolat{
+        height: auto;
+    }
+
+    .list{
+        font-size: 1.5rem;
+    }
+
+    .reference__pictures{
+        margin-top: -7rem;
+    }
+
+    .refbutton{
+        margin-top: -5rem;
+    }
+
+    .home__szolgaltatasok{
+        height: 90vh;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .nyitvatartas__container{
+        border-radius: 20px;
+    }
+
+    .kapcsolat{
+        height: auto;
+
+    }
+
+    .gyorsgomb{
+        margin-left: 0.1rem;
+    }
+
+    input, textarea{
+        padding: 30px;
+        width:  90%;
+        font-size: 20px;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    .submit__button{
+        padding: 1.4rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    
+}
+
+@media screen and (min-width: 1024px) and (max-height:900px){
+    .nav__menu{
+        right: 2rem;
+    }
+
+    .nav{
+        margin-top: 2rem;
+    }
+    
+    .nav__logo{
+        font-size: 2rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 35px;
+        position: absolute;
+        margin-left:4.6rem;
+        margin-top: -0.1rem;
+    }
+
+
+
+    .nav__list{
+        margin-left: auto;
+        flex-direction: row;
+        column-gap: 4rem;
+    }
+
+
+    .nav__link{
+        font-size: 1rem;
+    }
+
+    .megbizhato{
+        font-size: 5rem;
+    }
+
+    .effektiv{
+        font-size: 3.6rem;
+    }
+
+    .odaado{
+        font-size: 4.7rem;
+    }
+
+    .home__description{
+        font-size: 1.2rem;
+        width: 70%;
+    }
+
+    .home__button,
+    .ref__button,
+    .contact__button{
+        padding: 1.4rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .references h1{
+        font-size: 3.7rem;
+    }
+
+    .references__description{
+        font-size: 2.8rem;
+
+    }
+
+    .reference__pictures{
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: 0.1rem;
+        margin-bottom: 4rem;
+        transition: all 0.3s ease;
+    }
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 210px;
+    }
+
+
+    .bigtext1{
+        font-size: 1.8rem;
+    }
+
+    .smalltext1{
+        font-size: 1.1rem;
+    }
+
+
+    .home__szolgaltatasok{
+        height: 140vh;
+    }
+
+    .szolgaltatasok__container,
+    .szolgaltatasok__container2{
+        margin: 0 auto;
+        max-width: 90%;
+        margin-top: 2rem;
+    }
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.1rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 2.5rem;
+    }
+
+    .Panhans{
+        width: 550px;
+    }
+
+    .menet__text__container{
+        width: 90%;
+        height: 100%;
+        
+    }
+
+    .kesziteni{
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.0rem;
+    }
+
+    .menete2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        row-gap: 4rem;
+        text-align: center;
+    }
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 1.4rem;
+    }
+
+    .referenciakpt2__container{
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        max-width: 80%;
+        margin-top: -2rem;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1rem;
+    }
+    
+    
+    .uzletunk__kinalata1{
+        padding: 100px 20px 100px 40px;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        max-width: 100%;
+    }
+    
+
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1rem;
+    }
+    
+    .termszinek{
+        width: 150px;
+    }
+    
+    
+    .uzletunk_kepek_rightside, .right__side{
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    
+    .right__side__text{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+    }
+
+    .footer{
+        max-height: 38%;
+        min-height: 35%;
+    }
+
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 3.2rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 2rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 0.8rem;
+    }
+
+    .arlista{
+        height: auto;
+        margin-bottom: 3rem;
+    }
+
+    .arlista__container{
+        position: relative;
+        margin: 0 auto;
+        padding-top: 5rem;
+        text-align: center;
+        gap: 5rem;
+    }
+    
+    .middle{
+        background-color: #293F4F;
+        border-top-left-radius: 300px;
+        border-top-right-radius: 300px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        padding: 50px 50px 50px 50px;
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pdf{
+        font-size: 2rem;
+    }
+    
+    .pdfsmall{
+        font-size: 1.3rem;
+    }
+
+    
+    .middle2, .middle3, .left, .right{
+        background-color: #293F4F;
+        border-radius: 20px;
+        padding: 50px 50px 50px 50px;
+        position: relative;
+    }
+
+
+    
+    .tdlogoarlista, .tdarlistakepek, .tdarlistakepek2{
+        margin: 0 auto;
+        z-index: 3;
+        width: 300px;
+        padding-bottom: 0rem;
+        max-width: auto;
+    }
+    
+    .arlistatiszadesign{
+        color: var(--color-primarytext);
+        padding-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+    
+    #kaindl{
+        width: 200px;
+        padding-top: 1rem;
+    }
+    
+    
+    
+    .szolgaltatas__button, .megrendeles__button, .arkopa__button, .egger__button, .kaindl__button, .falco__button, .kronospan__button{
+    display: inline-block;
+    background-color: #244d72;
+    padding: 15px 40px 15px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    }
+
+   
+
+
+    .nyitvatartas__container{
+        max-width: 100%;
+    }
+
+    .kapcsolat{
+        height: auto;
+            padding-left: 0rem;
+
+    }
+
+    .kapcsolat__container{
+
+        margin-top: 5rem;
+        max-width: 100%;
+    }
+
+    .nyitvatartas__container{
+        height: 100%;
+        max-height: 100%;
+        
+    }
+
+    .nyitvatartas{
+        max-width: 50%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .list{
+        font-size: 1.8rem;
+    }
+
+    .vasarnap{
+        font-size: 2.7rem;
+    }
+
+    .nyitvatartas{
+        font-size: 2.7rem;
+    }
+    
+
+    iframe{
+        height: 23%;
+    }
+
+    .gyorsgomb{
+        margin-left: 0.3rem;
+        font-size: 0.82rem;
+    }
+
+    .contact__list{
+        width: 113px;
+    }
+
+
+
+}
+
+@media screen and (min-width: 1152px) and (max-height:868px){
+    .nav__menu{
+        right: 10rem;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+}
+
+@media screen and (min-width: 1150px) and (min-height:600px){
+    
+    .nav__menu{
+        right: 1rem;
+    }
+
+    .nav{
+        margin-top: 2rem;
+    }
+    
+    .nav__logo{
+        font-size: 2rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 35px;
+        position: absolute;
+        margin-left:4.6rem;
+        margin-top: -0.1rem;
+    }
+
+    .nav__link{
+        font-size: 1rem;
+    }
+
+    .megbizhato{
+        font-size: 5rem;
+    }
+
+    .effektiv{
+        font-size: 3.6rem;
+    }
+
+    .odaado{
+        font-size: 4.7rem;
+    }
+
+    .home__description{
+        font-size: 1.2rem;
+        width: 70%;
+    }
+
+    .home__button,
+    .ref__button,
+    .contact__button{
+        padding: 1.4rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .references h1{
+        font-size: 3.7rem;
+    }
+
+    .references__description{
+        font-size: 2.8rem;
+
+    }
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 210px;
+    }
+
+
+    .bigtext1{
+        font-size: 1.8rem;
+    }
+
+    .smalltext1{
+        font-size: 1.1rem;
+    }
+
+
+    .home__szolgaltatasok{
+        height: 130vh;
+    }
+
+    .szolgaltatasok__container,
+    .szolgaltatasok__container2{
+        margin: 0 auto;
+        max-width: 90%;
+        margin-top: 2rem;
+    }
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.1rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 2.5rem;
+    }
+
+    .Panhans{
+        width: 550px;
+    }
+
+    .menet__text__container{
+        width: 90%;
+        height: 100%;
+        
+    }
+
+    .kesziteni{
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.0rem;
+    }
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 1.4rem;
+    }
+
+    .referenciakpt2__container{
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        max-width: 80%;
+        margin-top: -0rem;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1rem;
+    }
+    
+    
+    .uzletunk__kinalata1{
+        padding: 100px 20px 100px 40px;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        max-width: 100%;
+    }
+    
+
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1rem;
+    }
+    
+    .termszinek{
+        width: 150px;
+    }
+    
+    
+    .uzletunk_kepek_rightside, .right__side{
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    
+    .right__side__text{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+    }
+
+    .footer{
+        max-height: 35%;
+        min-height: 27%;
+    }
+
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 3.2rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 2rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 0.8rem;
+    }
+
+
+    .arlista{
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    .arlista__container{
+        position: relative;
+        margin: 0 auto;
+        padding-top: 5rem;
+        text-align: center;
+        gap: 5rem;
+    }
+    
+    .middle{
+        background-color: #293F4F;
+        border-top-left-radius: 300px;
+        border-top-right-radius: 300px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        padding: 50px 50px 50px 50px;
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .pdf{
+        font-size: 2rem;
+    }
+    
+    .pdfsmall{
+        font-size: 1.3rem;
+    }
+
+    
+    .middle2, .middle3, .left, .right{
+        background-color: #293F4F;
+        border-radius: 20px;
+        padding: 50px 50px 50px 50px;
+        position: relative;
+    }
+
+
+    
+    .tdlogoarlista, .tdarlistakepek, .tdarlistakepek2{
+        margin: 0 auto;
+        z-index: 3;
+        width: 300px;
+        padding-bottom: 0rem;
+        max-width: auto;
+    }
+    
+    .arlistatiszadesign{
+        color: var(--color-primarytext);
+        padding-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+    
+    #kaindl{
+        width: 200px;
+        padding-top: 1rem;
+    }
+    
+    
+    
+    .szolgaltatas__button, .megrendeles__button, .arkopa__button, .egger__button, .kaindl__button, .falco__button, .kronospan__button{
+    display: inline-block;
+    background-color: #244d72;
+    padding: 15px 40px 15px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    }
+
+   
+
+
+    .nyitvatartas__container{
+        max-width: 100%;
+    }
+
+    .kapcsolat{
+        height: auto;
+            padding-left: 0rem;
+
+    }
+
+    .kapcsolat__container{
+
+        margin-top: 5rem;
+        max-width: 100%;
+    }
+
+    .nyitvatartas__container{
+        height: 100%;
+        max-height: 100%;
+        
+    }
+
+    .nyitvatartas{
+        max-width: 50%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .list{
+        font-size: 1.8rem;
+    }
+
+    .vasarnap{
+        font-size: 2.7rem;
+    }
+
+    .nyitvatartas{
+        font-size: 2.7rem;
+    }
+    
+
+    iframe{
+        height: 23%;
+    }
+
+    .gyorsgomb{
+        margin-left: 0.3rem;
+        font-size: 0.82rem;
+    }
+
+    .contact__list{
+        width: 113px;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1270px) and (min-height:500px){
+    .nav__menu{
+        right: 1rem;
+    }
+
+    .nav__logo{
+        font-size: 2rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 35px;
+        position: absolute;
+        margin-left:4.6rem;
+        margin-top: -0.1rem;
+    }
+
+
+
+    .nav__list{
+        margin-left: auto;
+        flex-direction: row;
+        column-gap: 4rem;
+        margin-top: 0.2rem;
+    }
+
+
+    .nav__link{
+        font-size: 1rem;
+    }
+
+    .megbizhato{
+        font-size: 5rem;
+    }
+
+    .effektiv{
+        font-size: 3.6rem;
+    }
+
+    .odaado{
+        font-size: 4.7rem;
+    }
+
+    .home__description{
+        font-size: 1.2rem;
+        width: 70%;
+    }
+
+    .references h1{
+        font-size: 3.7rem;
+    }
+
+    .references__description{
+        font-size: 2.8rem;
+
+    }
+
+    .reference__pictures{
+        max-width: 100%;
+        margin: 0 auto;
+        margin-top: 0.1rem;
+        margin-bottom: 4rem;
+    }
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 210px;
+    }
+
+
+    .bigtext1{
+        font-size: 1.8rem;
+    }
+
+    .smalltext1{
+        font-size: 1.1rem;
+    }
+
+
+    .home__szolgaltatasok{
+        height: 160vh;
+    }
+
+    .szolgaltatasok__container,
+    .szolgaltatasok__container2{
+        margin: 0 auto;
+        max-width: 90%;
+        margin-top: 2rem;
+    }
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.1rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 2.5rem;
+    }
+
+    .Panhans{
+        width: 550px;
+    }
+
+    .menet__text__container{
+        width: 90%;
+        height: 100%;
+        
+    }
+
+    .kesziteni{
+        font-size: 1.7rem;
+        margin-bottom: 2rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.0rem;
+    }
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 1.4rem;
+    }
+
+    .referenciakpt2__container{
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        max-width: 80%;
+        margin-top: -0rem;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1rem;
+    }
+    
+    
+    .uzletunk__kinalata1{
+        padding: 100px 20px 100px 40px;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        max-width: 100%;
+    }
+    
+
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1rem;
+    }
+    
+    .termszinek{
+        width: 150px;
+    }
+    
+
+    .footer{
+        max-height: 40%;
+        min-height: 30%;
+    }
+
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 3.2rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 2rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 0.8rem;
+    }
+
+
+    .arlista{
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    .arlista__container{
+        position: relative;
+        margin: 0 auto;
+        padding-top: 5rem;
+        text-align: center;
+        gap: 5rem;
+    }
+    
+    
+    .pdf{
+        font-size: 2rem;
+    }
+    
+    .pdfsmall{
+        font-size: 1.3rem;
+    }
+
+
+    .arlistatiszadesign{
+        color: var(--color-primarytext);
+        padding-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+    
+    
+    
+    
+    .szolgaltatas__button, .megrendeles__button, .arkopa__button, .egger__button, .kaindl__button, .falco__button, .kronospan__button{
+    display: inline-block;
+    background-color: #244d72;
+    padding: 15px 40px 15px 40px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-top: 1rem;
+    }
+
+   
+
+
+    .nyitvatartas__container{
+        max-width: 100%;
+    }
+
+    .kapcsolat{
+       height: auto;
+            padding-left: 0rem;
+
+    }
+
+    .kapcsolat__container{
+
+        margin-top: 5rem;
+        max-width: 100%;
+    }
+
+    .nyitvatartas__container{
+        height: 100%;
+        max-height: 100%;
+        
+    }
+
+    .nyitvatartas{
+        max-width: 50%;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+
+    .list{
+        font-size: 1.3rem;
+    }
+
+    .vasarnap{
+        font-size: 1.5rem;
+    }
+
+    .nyitvatartas{
+        font-size: 2.7rem;
+    }
+    
+
+    iframe{
+        height: 40%;
+    }
+
+    .gyorsgomb{
+        margin-left: 0.3rem;
+        font-size: 0.82rem;
+    }
+
+    .contact__list{
+        width: 113px;
+    }
+
+}
+
+@media screen and (min-width: 1360px) and (min-height:600px){
+    .nav__menu{
+        right: -8rem;
+    }
+
+
+    .nav__logo{
+        font-size: 3rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 60px;
+        position: absolute;
+        margin-left:6.8rem;
+        margin-top: -0.1rem;
+    }
+
+    .nav__link{
+        font-size: 1.2rem;
+    }
+
+    .megbizhato{
+        font-size: 5.5rem;
+    }
+
+    .effektiv{
+        font-size: 3.8rem;
+    }
+
+    .odaado{
+        font-size: 4.8rem;
+    }
+
+    .home__description{
+        font-size: 1.3rem;
+        width: 90%;
+    }
+
+
+    .references h1{
+        font-size: 4.3rem;
+    }
+
+    .references__description{
+        font-size: 2.7rem;
+
+    }
+
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 255px;
+    }
+
+    .footer{
+        max-height: 38%;
+        min-height: 28%;
+    }
+
+
+    .bigtext1{
+        font-size: 2.1rem;
+    }
+
+    .smalltext1{
+        font-size: 1.1rem;
+    }
+
+
+    .home__szolgaltatasok{
+        height: 120vh;
+    }
+
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.2rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 2.7rem;
+    }
+
+    .Panhans{
+        width: 400px;
+    }
+
+    .menet__text__container{
+        width: 60%;
+        height: 80%;
+        gap: 1rem;
+    }
+
+    .kesziteni{
+        font-size: 1.5rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.2rem;
+    }
+
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 1.6rem;
+    }
+
+    .referenciakpt2__container{
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        max-width: 80%;
+        margin-top: -1rem;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1rem;
+    }
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1rem;
+    }
+    
+    .termszinek{
+        width: 200px;
+    }
+    
+
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 3rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 1.8rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 1.1rem;
+    }
+
+
+    .arlista{
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+
+    .pdf{
+        font-size: 2rem;
+    }
+    
+    .pdfsmall{
+        font-size: 1.3rem;
+    }
+
+    .list{
+        font-size: 1.8rem;
+    }
+
+    .vasarnap{
+        font-size: 2.7rem;
+    }
+
+    .nyitvatartas{
+        font-size: 2.7rem;
+    }
+    
+
+    iframe{
+        height: 30%;
+    }
+
+    .gyorsgomb{
+        margin-left: 0.6rem;
+        font-size: 0.82rem;
+    }
+
+
+}
+
+
+@media screen and (min-width: 1440px){
+    .nav__menu{
+        right: -9rem;
+    }
+
+    
+    .nav__logo{
+        font-size: 3rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 60px;
+        position: absolute;
+        margin-left:6.8rem;
+        margin-top: -0.1rem;
+    }
+
+    .nav__link{
+        font-size: 1.25rem;
+    }
+
+    .footer{
+        max-height: 35%;
+        min-height: 22%;
+    }
+
+    .megbizhato{
+        font-size: 8rem;
+    }
+
+    .effektiv{
+        font-size: 6rem;
+    }
+
+    .odaado{
+        font-size: 7rem;
+    }
+
+    .home__description{
+        font-size: 1.4rem;
+        width: 90%;
+    }
+
+
+    .references h1{
+        font-size: 5.3rem;
+    }
+
+    .references__description{
+        font-size: 3.6rem;
+
+    }
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 300px;
+    }
+
+
+    .bigtext1{
+        font-size: 2.3rem;
+    }
+
+    .smalltext1{
+        font-size: 1.3rem;
+    }
+
+
+    .home__szolgaltatasok{
+        height: 130vh;
+    }
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.2rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 3.8rem;
+    }
+
+    .Panhans{
+        width: 590px;
+    }
+
+
+    .kesziteni{
+        font-size: 2.5rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.2rem;
+    }
+
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 1.8rem;
+    }
+
+    .uzletunk{
+        height: auto;
+        margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1rem;
+    }
+
+
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1rem;
+    }
+    
+    .termszinek{
+        width: 240px;
+    }
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 3.9rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 2.3rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 1.1rem;
+    }
+
+
+    .arlista{
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    
+    .pdf{
+        font-size: 2rem;
+    }
+    
+    .pdfsmall{
+        font-size: 1.3rem;
+    }
+
+    .list{
+        font-size: 1.8rem;
+    }
+
+    .vasarnap{
+        font-size: 2.7rem;
+    }
+
+    .nyitvatartas{
+        font-size: 2.7rem;
+    }
+
+    .gyorsgomb{
+        margin-left: 1.4rem;
+        font-size: 0.82rem;
+    }
+
+
+}
+
+@media screen and (min-width: 1530px){
+
+
+    .nav__menu{
+        right: -10rem;
+    }
+    
+    .nav__logo{
+        font-size: 3rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 60px;
+        position: absolute;
+        margin-left:6.8rem;
+        margin-top: -0.1rem;
+    }
+
+    .nav__link{
+        font-size: 1.25rem;
+    }
+
+    .megbizhato{
+        font-size: 9rem;
+    }
+
+    .effektiv{
+        font-size: 7rem;
+    }
+
+    .odaado{
+        font-size: 8rem;
+    }
+
+    .home__description{
+        font-size: 1.6rem;
+        width: 100%;
+    }
+
+    .home__button,
+    .ref__button,
+    .contact__button{
+        padding: 1.4rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .references h1{
+        font-size: 6rem;
+    }
+
+    .references__description{
+        font-size: 4rem;
+
+    }
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 320px;
+    }
+
+
+    .bigtext1{
+        font-size: 2.5rem;
+    }
+
+    .smalltext1{
+        font-size: 1.5rem;
+    }
+
+
+    .home__szolgaltatasok{
+        height: 110vh;
+    }
+
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.3rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 4.2rem;
+    }
+
+    .Panhans{
+        width: 580px;
+    }
+
+    .kesziteni{
+        font-size: 2.7rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.3rem;
+    }
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 2rem;
+    }
+
+
+    .uzletunk{
+        height: auto;
+        margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2.1rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1rem;
+    }
+
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1rem;
+    }
+    
+    .termszinek{
+        width: 230px;
+    }
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 4.2rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 2.5rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 1.2rem;
+    }
+
+
+    .arlista{
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    .list{
+        font-size: 1.8rem;
+    }
+
+    .vasarnap{
+        font-size: 2.7rem;
+    }
+
+    .nyitvatartas{
+        font-size: 2.7rem;
+    }
+    
+
+    iframe{
+        height: 30%;
+    }
+
+    .gyorsgomb{
+        margin-left: 1.15rem;
+        font-size: 0.82rem;
+    }
+
+
+
+
+
+
+}
+
+@media screen and (min-width: 1620px) and (min-height:800px){
+    .nav__menu{
+        right: -25.5rem;
+        margin-top: 0.2rem;
+    }
+
+    .nav__logo{
+        font-size: 3rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 60px;
+        position: absolute;
+        margin-left:6.8rem;
+        margin-top: -0.1rem;
+    }
+
+
+    .nav__link{
+        font-size: 1.25rem;
+    }
+
+    .megbizhato{
+        font-size: 9rem;
+    }
+
+    .effektiv{
+        font-size: 7rem;
+    }
+
+    .odaado{
+        font-size: 8rem;
+    }
+
+    .home__description{
+        font-size: 1.6rem;
+        width: 100%;
+    }
+
+    .references h1{
+        font-size: 6rem;
+    }
+
+    .references__description{
+        font-size: 4rem;
+
+    }
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 370px;
+    }
+
+    .footer{
+        max-height: 30%;
+        min-height: 20%;
+    }
+
+    .bigtext1{
+        font-size: 2.5rem;
+    }
+
+    .smalltext1{
+        font-size: 1.5rem;
+    }
+
+
+    .home__szolgaltatasok{
+        height: 110vh;
+    }
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.3rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 4.2rem;
+    }
+
+    .Panhans{
+        width: 580px;
+    }
+
+    .kesziteni{
+        font-size: 2.7rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.3rem;
+    }
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 2rem;
+    }
+
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2.3rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1.1rem;
+    }
+    
+    .uzletunk__kinalata1 p{
+        font-size: 1rem;
+    }
+    
+    .termszinek{
+        width: 300px;
+    }
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 4.6rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 2.7rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 1.3rem;
+    }
+
+
+    .arlista{
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    .list{
+        font-size: 1.8rem;
+    }
+
+    .vasarnap{
+        font-size: 2.7rem;
+    }
+
+    .nyitvatartas{
+        font-size: 2.7rem;
+    }
+
+    .gyorsgomb{
+        margin-left: 1.4rem;
+        font-size: 0.82rem;
+    }
+
+}
+
+@media screen and (min-width: 1580px) and (min-height:800px){
+
+    .nav__menu{
+        
+        right: -30%;
+        margin-top: 0.2rem;
+    }
+
+    .home__szolgaltatasok{
+        height: 110vh;
+    }
+
+    .footer{
+        max-height: 25%;
+        min-height: 15%;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .arlista{
+        height: auto;
+        margin-bottom: 5rem;
+    }
+
+    .kapcsolat{
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1590px) and (min-height:600px){
+
+    .nav__menu{
+        
+        right: -30%;
+        margin-top: 0.2rem;
+    }
+
+    .home__szolgaltatasok{
+        height: 125vh;
+    }
+
+    .footer{
+        max-height: 32%;
+        min-height: 22%;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    .arlista{
+        height: auto;
+        
+        
+    }
+
+    .kapcsolat{
+        height: auto;
+    }
+
+    iframe{
+        height: 45%;
+    }
+}
+
+@media screen and (min-width: 1720px){
+    .nav{
+        margin-top: 2rem;
+    }
+
+    .nav__menu{
+        width: 50%;
+        right: -24%;
+    }
+    
+    .nav__logo{
+        font-size: 3.4rem;
+    }
+
+    .TDLOGOb{
+        display: block;
+        width: 64px;
+        position: absolute;
+        margin-left:7.9rem;
+        margin-top: -0.1rem;
+    }
+
+
+
+  
+    .megbizhato{
+        font-size: 10rem;
+    }
+
+    .effektiv{
+        font-size: 8rem;
+    }
+
+    .odaado{
+        font-size: 9rem;
+    }
+
+    .home__description{
+        font-size: 1.7rem;
+        width: 100%;
+    }
+
+
+
+    .references h1{
+        font-size: 7rem;
+    }
+
+    .ref1,
+    .ref2,
+    .ref3,
+    .ref4{
+        width: 400px;
+    }
+
+    .footer{
+        max-height: 25%;
+        height: 15%;
+    }
+
+    .home__szolgaltatasok{
+        height: 115vh;
+    }
+
+    .home__szolgaltatasok__description,
+    .home__szolgaltatasok__description2{
+        font-size: 1.5rem;
+    }
+
+    .szabas, 
+    .szabas2{
+        font-size: 4.5rem;
+    }
+
+    .Panhans{
+        width: 650px;
+    }
+
+    .menet__text__container{
+        width: 90%;
+        height: 80%;
+    }
+
+    .kesziteni{
+        font-size: 3rem;
+    }
+
+    .home__szolgaltatasok__description3{
+        font-size: 1.5rem;
+    }
+
+    .igenyek, .lapszabas, .elzaras, .osszeszereles{
+        font-size: 2rem;
+    }
+
+    .referenciakpt2__container{
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        max-width: 80%;
+        margin-top: -2rem;
+    }
+
+    .uzletunk{
+        height: auto;
+            margin-bottom: 3rem;
+        padding-left: 0rem;
+    }
+    
+    .kinalat{
+        font-size: 2.7rem;
+    }
+    
+    .kinalattext{
+        padding-top: 0.6rem;
+        font-size: 1.2rem;
+    }
+    
+
+
+    
+
+    .termszinek{
+        width: 330px;
+    }
+
+
+    .mindent,
+    .kivalasztottal{
+        font-size: 5rem;
+    }
+
+    .szukseged,
+    .kepernyo{
+        font-size: 3rem;
+    }
+
+    .uzletunk__kinalata1 p{
+        font-size: 1.5rem;
+    }
+
+
+    .arlista{
+        height: auto;
+            margin-bottom: 3rem;
+    }
+
+    
+    .arlistatiszadesign{
+        font-size: 2.5rem;
+    }
+    
+
+    .list{
+        font-size: 2.2rem;
+    }
+
+    .vasarnap{
+        font-size: 3rem;
+    }
+
+    .nyitvatartas{
+        font-size: 3rem;
+    }
+    
+
+    .gyorsgomb{
+        margin-left: 1.8rem;
+        font-size: 0.81rem;
+    }
+
+    }
+
+    @media screen and (min-width: 1830px){
+
+
+        .nav__menu{
+
+            right: -33%;
+        }
+        
+
+    
+        .footer{
+            max-height: 30%;
+            height: 15%;
+        }
+    
+        .home__szolgaltatasok{
+            height: 115vh;
+        }
+
+    
+        .uzletunk{
+            height: auto;
+            margin-bottom: 3rem;
+        }
+        
+
+    
+        .arlista{
+            height: auto;
+            margin-bottom: 3rem;
+        }
+
+
+        .gyorsgomb{
+            margin-left: 2.3rem;
+            font-size: 0.81rem;
+        }
+    
+
+}
