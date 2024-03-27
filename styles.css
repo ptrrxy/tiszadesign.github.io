@@ -290,10 +290,10 @@ align-items: center;
 
 .home__description{
     width: 90%;
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     opacity: 50%;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
 }
 
 .home__button,
