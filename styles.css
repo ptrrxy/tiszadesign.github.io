@@ -253,7 +253,7 @@ align-items: center;
 /* ------------------ home ------------- */
 .home{
         position: relative;
-    height: 115vh;
+    height: 120vh;
 }
 
 .home__container{
@@ -540,7 +540,7 @@ span{
 /* -------------- SZOLGÁLTATÁSOK --------------- */
 
 .home__szolgaltatasok{
-    height: 110vh;
+    height: 115vh;
 }
 
 .szolgaltatasok__container, .szolgaltatasok__container2{
@@ -730,7 +730,7 @@ span{
     justify-content: center;
     text-align: center;
     margin: 0 auto;
-    padding-top: 1.5rem;
+    padding-top: 1rem;
 }
 
 .kinalat{
