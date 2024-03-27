@@ -2150,8 +2150,22 @@ iframe{
     }
 
 	.hiba__page{
-    height:auto;
-    padding-top: 2rem;
+    height:100vh;
+    padding-top: 1rem;
+}
+
+.hiba__container{
+    font-size: 2rem;
+    color: var(--color-primarytext);
+    margin-top: 2rem;
+	margin-right:1rem;
+	margin-left:1rem;
+}
+
+.sajnaljuk{
+    padding-top: 1rem;
+    margin: 0 auto;
+    text-align: center;
 }
 
     
