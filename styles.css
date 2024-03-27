@@ -821,20 +821,20 @@ span{
 
 .hiba__page{
     height:90vh;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .hiba__container{
     font-size: 2rem;
     color: var(--color-primarytext);
-    margin-top: 5rem;
+    margin-top: 2rem;
     padding-top: 0rem;
 	margin-right:1rem;
 	margin-left:1rem;
 }
 
 .sajnaljuk{
-    padding-top: 2rem;
+    padding-top: 1rem;
     margin: 0 auto;
     text-align: center;
 }
