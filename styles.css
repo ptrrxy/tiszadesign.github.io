@@ -2157,7 +2157,7 @@ iframe{
 .hiba__container{
     font-size: 2rem;
     color: var(--color-primarytext);
-    margin-top: 2rem;
+    margin-top: 1rem;
 	margin-right:1rem;
 	margin-left:1rem;
 }
@@ -3354,9 +3354,24 @@ iframe{
         font-size: 0.82rem;
     }
 
-	.hiba__page{
-    height:110vh;
-    padding-top: 2rem;
+	hiba__page{
+    height:115vh;
+    padding-top: 1rem;
+}
+
+.hiba__container{
+    font-size: 1.8rem;
+    color: var(--color-primarytext);
+    margin-top: 1rem;
+    padding-top: 0rem;
+	margin-right:1rem;
+	margin-left:1rem;
+}
+
+.sajnaljuk{
+    padding-top: 1rem;
+    margin: 0 auto;
+    text-align: center;
 }
 
 
