@@ -829,6 +829,8 @@ span{
     color: var(--color-primarytext);
     margin-top: 5rem;
     padding-top: 0rem;
+	margin-right:1rem;
+	margin-left:1rem;
 }
 
 .sajnaljuk{
@@ -2147,6 +2149,11 @@ iframe{
         font-size: 1.2rem;
     }
 
+	.hiba__page{
+    height:110vh;
+    padding-top: 2rem;
+}
+
     
 }
 
@@ -3332,6 +3339,11 @@ iframe{
         margin-left: 0.6rem;
         font-size: 0.82rem;
     }
+
+	.hiba__page{
+    height:110vh;
+    padding-top: 2rem;
+}
 
 
 }
